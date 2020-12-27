@@ -11,7 +11,7 @@ from sentiment_analysis import *
 # We create an extractor object:
 extractor = twitter_setup()
 # We create a tweet list as follows:
-tweets = extractor.user_timeline(screen_name="realDonaldTrump", count=200)
+tweets = extractor.user_timeline(screen_name="realDonaldTrump", count=100)
 print("Number of tweets extracted: {}.\n".format(len(tweets)))
 # We print the most recent 5 tweets:
 print("5 recent tweets:\n")

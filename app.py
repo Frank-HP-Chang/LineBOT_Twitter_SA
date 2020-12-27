@@ -25,7 +25,7 @@ line_bot_api = LineBotApi('7QDAXmZ5UqZssltAy2CJNEY2B1YnVzM/qqckpRyLSPkbUITT5DUYI
 parser = WebhookParser('ff325141242f29a7c6b270be1e9f3dc3')
 
 machine = TocMachine(
-    states=["user", "main_menu", "twitter_menu", "input_user", "SA","mostLike","mostRe","show_fsm"],
+    states=["user", "main_menu", "twitter_menu", "input_user", "SA","mostLike","mostRe","show_fsm","pos_rate","neu_rate", "neg_rate"],
     transitions=[
         {"trigger": "advance", "source": "user", "dest": "main_menu",
             "conditions": "is_going_to_main_menu"},
@@ -53,6 +53,14 @@ machine = TocMachine(
             "dest": "main_menu", "conditions": "is_going_back"},
         {"trigger": "advance", "source": "show_fsm",
             "dest": "input_user", "conditions": "is_going_to_input_user"},
+        {"trigger": "advance", "source": "SA",
+            "dest": "pos_rate", "conditions": "is_going_to_pos_rate"},
+        {"trigger": "advance", "source": "SA",
+            "dest": "neu_rate", "conditions": "is_going_to_neu_rate"},
+        {"trigger": "advance", "source": "SA",
+            "dest": "neg_rate", "conditions": "is_going_to_neg_rate"},
+        {"trigger": "advance", "source": ["pos_rate", "neu_rate", "neg_rate"],
+            "dest": "SA","conditions": "is_going_back"},
     ],
     initial='user',
     auto_transitions=False,
