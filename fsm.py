@@ -254,7 +254,7 @@ class TocMachine(GraphMachine):
         line_bot_api.reply_message(event.reply_token, reply_arr)
     def on_enter_show_fsm(self,event):
         reply_arr=[]
-        reply_arr.append(ImageSendMessage(original_content_url='https://i.imgur.com/Ii07SRo.png',preview_image_url='https://i.imgur.com/Ii07SRo.png'))
+        reply_arr.append(ImageSendMessage(original_content_url='https://i.imgur.com/fru5bsQ.png',preview_image_url='https://i.imgur.com/fru5bsQ.png'))
         message = TemplateSendMessage(
             alt_text='返回主選單',
             template=ButtonsTemplate(
