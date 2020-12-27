@@ -30,7 +30,7 @@ def twitter_menu():
         template=ButtonsTemplate(
             title='Twitter選單',
             text='若要返回上一層,請輸入:back',
-            thumbnail_image_url='https://i.imgur.com/QRIa5Dz.jpg',
+            thumbnail_image_url='https://i.imgur.com/jhDvFhH.png',
             actions=[
                 MessageTemplateAction(
                     label='情緒分析',
@@ -41,8 +41,8 @@ def twitter_menu():
                     text='最多Like'
                 ),
                 MessageTemplateAction(
-                    label='最多Re',
-                    text='最多Re'
+                    label='最多ReTweet',
+                    text='最多ReTweet'
                 ),
                 MessageTemplateAction(
                     label='back',
@@ -116,7 +116,7 @@ class TocMachine(GraphMachine):
         return text=='最多Like'
     def is_going_to_mostRe(self,event):
         text=event.message.text
-        return text == '最多Re'
+        return text == '最多ReTweet'
     def is_going_to_show_fsm(self,event):
         text=event.message.text
         return text=='FSM'
@@ -192,10 +192,15 @@ class TocMachine(GraphMachine):
             template=ButtonsTemplate(
                 title=' ',
                 text=' ',
+                thumbnail_image_url='https://i.imgur.com/HadIxLt.png',
                 actions=[
                     MessageTemplateAction(
                         label='返回主選單',
                         text='back'
+                    ),
+                    MessageTemplateAction(
+                        label='Twitter分析',
+                        text='Twitter'
                     )
                 ]
             )
@@ -211,7 +216,7 @@ def back_movie_button():
         template=ButtonsTemplate(
             title=' ',
             text=' ',
-            #thumbnail_image_url='https://i.imgur.com/QRIa5Dz.jpg',
+            thumbnail_image_url='https://i.imgur.com/txGY1Uy.png',
             actions=[
                 MessageTemplateAction(
                     label='返回Twitter選單',
@@ -229,7 +234,7 @@ def main_menu():
         template=ButtonsTemplate(
             title='主選單',
             text='若要返回上一層,請輸入:back',
-            thumbnail_image_url='https://i.imgur.com/QRIa5Dz.jpg',
+            thumbnail_image_url='https://i.imgur.com/oHqZveC.png',
             actions=[
                 MessageTemplateAction(
                     label='Twitter',

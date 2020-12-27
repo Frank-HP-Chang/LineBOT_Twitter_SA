@@ -51,6 +51,8 @@ machine = TocMachine(
             "dest": "main_menu", "conditions": "is_going_back"},
         {"trigger": "advance", "source": "show_fsm",
             "dest": "main_menu", "conditions": "is_going_back"},
+        {"trigger": "advance", "source": "show_fsm",
+            "dest": "input_user", "conditions": "is_going_to_input_user"},
     ],
     initial='user',
     auto_transitions=False,
